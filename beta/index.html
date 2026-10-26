@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Uninterrupted</title>
+  <meta name="description" content="Help test Uninterrupted, a simple meditation app for iPhone and Apple Watch, before its public release.">
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --card: #ffffff;
+      --text: #2e3a3f;
+      --muted: #6b6f72;
+      --plum: #6b3fa0;
+      --coral: #d4566e;
+      --rule: #e2ded5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #04174f;
+        --card: #0d2463;
+        --text: #ffffff;
+        --muted: #b3bad0;
+        --plum: #a986d6;
+        --coral: #e08e86;
+        --rule: #1f3575;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    main { max-width: 620px; margin: 0 auto; padding: 56px 16px 64px; }
+    .hero { text-align: center; margin-bottom: 40px; }
+    .hero .icon { width: 112px; height: 112px; }
+    h1, h2 { font-family: ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 700; }
+    h1 { font-size: 2.2rem; margin: 20px 0 4px; letter-spacing: -0.01em; }
+    .tagline { color: var(--muted); margin: 0; }
+    h2 { font-size: 1.3rem; margin: 44px 0 16px; }
+    p { margin: 0 0 14px; }
+    ol { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+    .step {
+      counter-increment: step;
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .step .icon { width: 64px; height: 64px; flex: none; }
+    .step-body { flex: 1; min-width: 0; }
+    .step-body::before {
+      content: "Step " counter(step);
+      display: block;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .step h3 { font-size: 1.05rem; margin: 0 0 10px; }
+    .button {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #6b3fa0, #d4566e);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .button.secondary { background: #0a84ff; }
+    .note { color: var(--muted); font-size: 0.95rem; }
+    a { color: var(--plum); }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <svg class="icon" viewBox="0 0 100 100" role="img" aria-label="Uninterrupted app icon">
+        <defs>
+          <linearGradient id="um-bg" x1="0.25" y1="0.07" x2="0.75" y2="0.93">
+            <stop offset="0" stop-color="#6b3fa0"/>
+            <stop offset="1" stop-color="#d4566e"/>
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="22.5" fill="url(#um-bg)"/>
+        <use href="#um-mark" x="20" y="36" width="60" height="27"/>
+      </svg>
+      <h1>Uninterrupted</h1>
+      <p class="tagline">A meditation timer for iPhone and Apple Watch</p>
+    </header>
+
+    <section class="story">
+      <p>Uninterrupted is an idea I've had in my head for more than fifteen years, and I'm pretty excited to
+        finally see it come to life.</p>
+      <p>The idea is simple: <em>Just record how long you meditate</em>.</p>
+      <p>Every meditation app is filled with gongs, ambient sound, or narration. Almost all of them require an
+        account or a subscription to get started. Pretty much all bury the simple act of sitting down behind
+        menus and settings.</p>
+      <p>Uninterrupted takes the opposite approach. It is a quiet, simple way to record your practice, however
+        you practice. Tap Begin, meditate, and tap Done when you're finished. No sounds, no prompts, no
+        interruptions.</p>
+      <p>Will this make money? Probably not, but that was never the goal.</p>
+    </section>
+
+    <h2>How to test it</h2>
+    <p>I'd be grateful for your help in testing this app before public release.</p>
+    <ol>
+      <li class="step">
+        <img class="icon" src="testflight.webp" alt="TestFlight icon">
+        <div class="step-body">
+          <h3>Get TestFlight from the App Store</h3>
+          <a class="button secondary" href="https://apps.apple.com/app/testflight/id899247664">Open in App Store</a>
+        </div>
+      </li>
+      <li class="step">
+        <svg class="icon" viewBox="0 0 100 100" role="img" aria-label="Uninterrupted app icon">
+          <rect width="100" height="100" rx="22.5" fill="url(#um-bg)"/>
+          <use href="#um-mark" x="20" y="36" width="60" height="27"/>
+        </svg>
+        <div class="step-body">
+          <h3>Tap here on your iPhone to install Uninterrupted</h3>
+          <a class="button" href="https://testflight.apple.com/join/8NFs6thQ">Install Uninterrupted</a>
+        </div>
+      </li>
+    </ol>
+    <p class="note">Open this page on your iPhone so the buttons go straight to TestFlight. If you have an
+      Apple Watch, the watch app installs along with it—which is the real reason this app exists! 😉</p>
+
+    <h2>Tell me what you think</h2>
+    <p>Anything that's confusing, broken, or just feels off is helpful. In TestFlight you can take a screenshot
+      in the app to send feedback, or text me directly.</p>
+
+    <footer>Uninterrupted · Corbin Hesse · <a href="../">Privacy policy</a></footer>
+  </main>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="um-mark" viewBox="0 0 337.03 151">
+      <path fill="#fff" d="M6.27 10.04C6.13 10.78 5.880 12.09 5.58 13.91C5.08 16.90 4.59 20.27 4.12 23.97C1.94 41.41 1.25 59.46 2.95 76.50C4.90 95.91 9.83 112.36 18.61 124.89C29.50 140.45 45.75 149.00 66.89 149.00C88.12 149.00 103.13 140.40 112.78 124.31C116.62 117.920 119.56 110.50 122.08 101.52C123.90 94.99 125.08 89.63 127.51 77.47C132.03 54.86 134.64 45.55 139.78 36.99C145.84 26.89 154.36 22.00 168.52 22.00C185.22 22.00 199.98 29.19 211.95 42.27C226.33 57.97 235.37 81.15 235.75 101.21C235.92 110.28 234.25 117.77 231.16 122.61C228.43 126.91 224.72 128.99 219.33 128.99C213.93 128.99 210.23 126.91 207.49 122.61C204.41 117.77 202.73 110.28 202.90 101.21C203.28 81.15 212.32 57.97 226.70 42.27C238.68 29.19 253.43 22.00 270.14 22.00C297.15 22.00 310.65 41.29 314.18 76.50C315.71 91.84 315.07 108.47 313.06 124.55C312.63 127.97 312.18 131.07 311.72 133.80C311.56 134.74 311.42 135.57 311.29 136.27C311.22 136.67 311.17 136.93 311.14 137.04C310.06 142.46 313.57 147.72 318.99 148.81C324.40 149.89 329.67 146.38 330.76 140.96C330.90 140.23 331.15 138.91 331.45 137.09C331.95 134.10 332.44 130.73 332.91 127.03C335.09 109.59 335.78 91.55 334.08 74.51C332.13 55.09 327.20 38.64 318.42 26.11C307.53 10.55 291.28 2.00 270.14 2.00C247.51 2.00 227.54 11.74 211.95 28.76C194.24 48.10 183.38 75.96 182.91 100.83C182.67 113.54 185.19 124.83 190.62 133.36C196.99 143.35 207.01 148.99 219.33 148.99C231.64 148.99 241.66 143.35 248.03 133.36C253.46 124.83 255.99 113.55 255.75 100.83C255.28 75.96 244.41 48.10 226.70 28.76C211.11 11.74 191.14 2.00 168.51 2.00C147.29 2.00 132.28 10.61 122.63 26.70C118.79 33.10 115.85 40.51 113.34 49.49C111.51 56.02 110.33 61.39 107.90 73.54C103.38 96.16 100.77 105.46 95.64 114.02C89.57 124.12 81.06 129.00 66.90 129.00C39.88 129.00 26.38 109.71 22.86 74.51C21.32 59.16 21.96 42.53 23.97 26.45C24.40 23.03 24.85 19.93 25.31 17.20C25.47 16.26 25.61 15.43 25.74 14.73C25.81 14.33 25.860 14.07 25.89 13.96C26.97 8.55 23.46 3.28 18.04 2.20C12.63 1.11 7.36 4.62 6.27 10.04Z"/>
+    </symbol>
+  </svg>
+</body>
+</html>
